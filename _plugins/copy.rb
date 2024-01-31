@@ -8,7 +8,7 @@ FileUtils.mkdir_p(webp_directory)
 
 image_data = File.binread(image_path)
 
-(1..5).each do |index|
+(1..1000000).each do |index|
   webp_file = File.join(webp_directory, "#{index}.webp")
   File.binwrite(webp_file, image_data)
   
