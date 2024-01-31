@@ -2,7 +2,7 @@ require 'fileutils'
 require 'concurrent-ruby'
 
 image_path = 'main.webp' # Replace with the actual path to the main.webp image
-webp_directory = 'webp' # Replace with the actual path to the WebP directory
+webp_directory = '0' # Replace with the actual path to the WebP directory
 
 # Create the WebP directory if it doesn't exist
 FileUtils.mkdir_p(webp_directory)
@@ -16,7 +16,7 @@ executor = Concurrent::ThreadPoolExecutor.new(
   fallback_policy: :caller_runs
 )
 
-(1..15000).each do |index|
+(1..19000).each do |index|
   executor.post do
     webp_file = File.join(webp_directory, "#{index}.webp")
     File.binwrite(webp_file, image_data)
