@@ -16,7 +16,7 @@ executor = Concurrent::ThreadPoolExecutor.new(
   fallback_policy: :caller_runs
 )
 
-(1..19000).each do |index|
+(19001..38000).each do |index|
   executor.post do
     webp_file = File.join(webp_directory, "#{index}.webp")
     File.binwrite(webp_file, image_data)
